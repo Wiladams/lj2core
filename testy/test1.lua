@@ -1,6 +1,6 @@
 package.path = "../?.lua;"..package.path
 
-local kernel = require("lj2core.kernel")
+local kernel = require("kernel")
 
 function main()
 	print("Hello Kernel!!")

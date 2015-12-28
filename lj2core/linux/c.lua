@@ -811,6 +811,12 @@ else
   end
 end
 
+-- long ptrace(enum __ptrace_request request, pid_t pid, void*addr, void *data);
+local pid_t = ffi.typeof("pid_t")
+function C.ptrace(req, pid, addr, data)
+  return syscall(sys.ptrace, int(req), pid_t(pid), void(addr), void(data))
+end
+
 return C
 
 

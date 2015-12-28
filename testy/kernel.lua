@@ -2,7 +2,9 @@
 -- running for a given lua state
 
 local ffi = require("ffi")
-local libc = require("lj2core.libc")
+--local libc = require("lj2core.libc")
+local libc = require("lj2core.linux.c")
+local epollset = require("epollset")
 
 --[[
 	Queue
@@ -163,7 +165,7 @@ end
 --]]
 local cio_EventQuanta = 1;
 local cio_ContinueRunning = true;
-local cio_EPollSet = libc.epollset();
+local cio_EPollSet = epollset();
 local cio_MaxEvents = 100;		-- number of events we'll ask per quanta
 local cio_Events = ffi.new("struct epoll_event[?]", cio_MaxEvents);
 
