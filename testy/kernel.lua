@@ -2,7 +2,6 @@
 -- running for a given lua state
 
 local ffi = require("ffi")
---local libc = require("lj2core.libc")
 local libc = require("lj2core.linux.c")
 local epollset = require("epollset")
 
